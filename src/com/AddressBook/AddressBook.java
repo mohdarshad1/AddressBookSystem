@@ -1,5 +1,4 @@
 package com.AddressBook;
-
 import java.util.Scanner;
 
 public class AddressBook {
@@ -100,7 +99,6 @@ public class AddressBook {
 		System.out.println("Enter your email_id");
 		String email_id=sc.nextLine();
 		
-		
 		setAddress(address);
 		setCity(city);
 		setEmail_id(email_id);
@@ -109,7 +107,6 @@ public class AddressBook {
 		setPhone_number(phone_number);
 		setState(state);
 		setZip(zip);
-		
 	}
 	
 	public void editDetails() {
@@ -134,7 +131,6 @@ public class AddressBook {
 		System.out.println("Edit the email_id");
 		String email_id=sc.nextLine();
 		
-		
 		setAddress(address);
 		setCity(city);
 		setEmail_id(email_id);
@@ -143,27 +139,31 @@ public class AddressBook {
 		setPhone_number(phone_number);
 		setState(state);
 		setZip(zip);
-		
 	}
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Address Book System\n");
-		UserInterface adr = new UserInterface();
-		adr.UserInterfaceFunction();
+		UserInterface UIntFace = new UserInterface();
+		UIntFace.UserInterfaceFunction();		
 	}
 }
 
 class UserInterface {
 	
-public  void UserInterfaceFunction() {
+		public  void UserInterfaceFunction() {
 		
 		Scanner sc=new Scanner(System.in);
 		
 		AddressBook AddressBookRecord = new AddressBook();
+		int choice;
+		
+		do {
 		System.out.println("1.Add a Entry to Address Book");
-		System.out.println("2.Edit a Entry of Address Book");
-		System.out.println("Enter your choice"); 
-		int choice=sc.nextInt();
+		System.out.println("2.Edit a entry of Address Book");
+		System.out.println("3. Delete a Entry of Address Book");
+		System.out.println("4. Exit");
+		System.out.println("Enter your Choice"); 
+		 choice=sc.nextInt();
 		
 		switch (choice) {
 		case 1: {
@@ -176,7 +176,14 @@ public  void UserInterfaceFunction() {
 			break;
 		}
 		
+		case 3: {
+			AddressBookRecord=null;
+			break;
 		}
+		
+		}
+		
+		}while(choice!=4);
 		
 	}
 }
